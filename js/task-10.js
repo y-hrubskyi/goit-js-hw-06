@@ -5,26 +5,26 @@ function getRandomHexColor() {
 }
 
 const refs = {
-  numberOfBoxesInputEl: document.querySelector(
+  numberOfBoxesInput: document.querySelector(
     '#controls > input[type="number"]'
   ),
-  createBoxesBtnEl: document.querySelector('[data-create]'),
-  destroyBoxesBtnEl: document.querySelector('[data-destroy]'),
-  boxesListEl: document.querySelector('#boxes'),
+  createBoxesBtn: document.querySelector('[data-create]'),
+  destroyBoxesBtn: document.querySelector('[data-destroy]'),
+  boxesList: document.querySelector('#boxes'),
 };
 
-refs.createBoxesBtnEl.addEventListener('click', onCreateBoxesBtnClick);
-refs.destroyBoxesBtnEl.addEventListener('click', onDestroyBoxesBtnClick);
+refs.createBoxesBtn.addEventListener('click', onCreateBoxesBtnClick);
+refs.destroyBoxesBtn.addEventListener('click', onDestroyBoxesBtnClick);
 
 function onCreateBoxesBtnClick() {
-  const quantity = Number(refs.numberOfBoxesInputEl.value);
+  const quantity = Number(refs.numberOfBoxesInput.value);
 
   if (!quantity) {
     alert('Enter the quantity of the boxes!');
     return;
   }
 
-  refs.boxesListEl.innerHTML = createBoxes(quantity);
+  refs.boxesList.innerHTML = createBoxes(quantity);
 }
 
 function createBoxes(quantity) {
@@ -42,5 +42,5 @@ function createBoxes(quantity) {
 }
 
 function onDestroyBoxesBtnClick() {
-  refs.boxesListEl.innerHTML = '';
+  refs.boxesList.innerHTML = '';
 }
